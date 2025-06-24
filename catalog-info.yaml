@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: k735d46kz-go-gitops
+  description: This is GitOps manifest for k735d46kz-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=k735d46kz-go
+    backstage.io/kubernetes-id: k735d46kz-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: k735d46kz-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:k735d46kz-go
